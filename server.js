@@ -16,7 +16,20 @@ app.get('/', (req, res) => {
 
 // Socket connection....
 const io = require('socket.io')(http)
-io.on('connection', (socket) => {
+
+
+/** default namespace */
+// io.on('connection', (socket) => {
+//     console.log('A new User is Connected...')
+//     socket.on('message', (msg) => {
+//         socket.broadcast.emit('message', msg)
+//     })
+// })
+  
+
+/** custom namespace */
+const nsp = io.of('/example')
+nsp.on('connection', (socket) => {
     console.log('A new User is Connected...')
     socket.on('message', (msg) => {
         socket.broadcast.emit('message', msg)

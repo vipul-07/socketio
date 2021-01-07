@@ -1,4 +1,4 @@
-const socket = io()
+const socket = io('/example') // joining custom namespace
 let userName;
 let textarea = document.querySelector('#textarea')
 let messageArea = document.querySelector('.message__area')
