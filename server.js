@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 })
 
-// Socket connection
+// Socket connection....
 const io = require('socket.io')(http)
 io.on('connection', (socket) => {
     console.log('A new User is Connected...')
